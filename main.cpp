@@ -11,6 +11,8 @@
  */
 
 #include <cstdlib>
+#include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -19,6 +21,26 @@ using namespace std;
  */
 int main(int argc, char** argv) {
 
+    int filas, columnas, minas;
+    string nickJugador, fichero;
+    
+    for (int i = 1; i < argc; i += 2) {
+        string arg = argv[i];
+        if (arg == "-f") {
+            filas = stoi(argv[i + 1]);
+        } else if (arg == "-c") {
+            columnas = stoi(argv[i + 1]);
+        } else if (arg == "-m") {
+            minas = stoi(argv[i + 1]);
+        } else if (arg == "-nick") {
+            nickJugador = argv[i + 1];
+        } else if (arg == "-fich") {
+            fichero = argv[i + 1];
+        } else {
+            cerr << "Argumento no reconocido: " << arg << endl;
+            exit;
+        }
+    }
     return 0;
 }
 
