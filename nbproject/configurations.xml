@@ -4,6 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>include/ConjuntoJugadores.h</itemPath>
+      <itemPath>include/Jugador.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -12,6 +14,8 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>src/ConjuntoJugadores.cpp</itemPath>
+      <itemPath>src/Jugador.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -26,6 +30,10 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>src</Elem>
+    <Elem>include</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="1">
@@ -37,9 +45,21 @@
       <compileType>
         <ccTool>
           <standard>8</standard>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>src</pElem>
+          </incDir>
         </ccTool>
       </compileType>
+      <item path="include/ConjuntoJugadores.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Jugador.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ConjuntoJugadores.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Jugador.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -62,7 +82,15 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="include/ConjuntoJugadores.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/Jugador.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ConjuntoJugadores.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Jugador.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>
