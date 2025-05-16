@@ -37,7 +37,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/src/ConjuntoJugadores.o \
-	${OBJECTDIR}/src/Jugador.o
+	${OBJECTDIR}/src/Jugador.o \
+	${OBJECTDIR}/src/MatrizEnteros.o \
+	${OBJECTDIR}/src/Tablero.o
 
 
 # C Compiler Flags
@@ -78,6 +80,16 @@ ${OBJECTDIR}/src/Jugador.o: src/Jugador.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Iinclude -Isrc -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Jugador.o src/Jugador.cpp
+
+${OBJECTDIR}/src/MatrizEnteros.o: src/MatrizEnteros.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Iinclude -Isrc -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/MatrizEnteros.o src/MatrizEnteros.cpp
+
+${OBJECTDIR}/src/Tablero.o: src/Tablero.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Iinclude -Isrc -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Tablero.o src/Tablero.cpp
 
 # Subprojects
 .build-subprojects:
