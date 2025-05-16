@@ -194,3 +194,56 @@ void Tablero::calculardistancias(){
      return haganado;
  }
  
+ Tablero & Tablero::operator=(const Tablero & orig){
+     
+     this->tab=orig.tab;
+     this->descubierto=orig.descubierto;
+     
+     return *this;
+     
+ }
+ 
+ bool Tablero::abrirpos(int i, int j){
+     
+     bool hasperdido;
+     hasperdido=false;
+     
+     if (tab.getValue(i, j)!= 0){
+         descubierto.putValue(i, j)=1;
+     }
+     
+     if (tab.getValue(i, j)== 0){
+        
+         descubierto.putValue(i, j)=1;
+        
+        for(int k=i-1; k<=i+1; k++){
+            for (int l=j-1; j<=j+1; l++){
+                
+                if(en_rango(0, tab.numfilas(), k) && en_rango(0, tab.numcolumnas(), l) && k!=i && l!=j){
+                    if (descubierto.getValue(k, l)!=1){
+                        abrirpos(k,l);
+                    }
+                }
+            }
+        }
+     }
+ 
+        
+     
+     if (tab.getValue(i,j)==NUMBOMBA){
+         hasperdido=true;
+     }
+     return hasperdido;
+ }
+ 
+ void Tablero::marcarpos(int i, int j) {
+     if(descubierto.getValue(i, j)==0){
+        descubierto.putValue(i, j)=2;
+     }
+ }
+ 
+  void Tablero::desmarcarpos(int i, int j) {
+     if(descubierto.getValue(i, j)==2){
+        descubierto.putValue(i, j)=0;
+     }
+ }

@@ -7,6 +7,7 @@
       <itemPath>include/ConjuntoJugadores.h</itemPath>
       <itemPath>include/Jugador.h</itemPath>
       <itemPath>include/MatrizEnteros.h</itemPath>
+      <itemPath>include/Partida.h</itemPath>
       <itemPath>include/Tablero.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -19,6 +20,7 @@
       <itemPath>src/ConjuntoJugadores.cpp</itemPath>
       <itemPath>src/Jugador.cpp</itemPath>
       <itemPath>src/MatrizEnteros.cpp</itemPath>
+      <itemPath>src/Partida.cpp</itemPath>
       <itemPath>src/Tablero.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -61,6 +63,8 @@
       </item>
       <item path="include/MatrizEnteros.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/Partida.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/Tablero.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
@@ -70,6 +74,8 @@
       <item path="src/Jugador.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/MatrizEnteros.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Partida.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Tablero.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -100,6 +106,8 @@
       </item>
       <item path="include/MatrizEnteros.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/Partida.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/Tablero.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
@@ -109,6 +117,8 @@
       <item path="src/Jugador.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/MatrizEnteros.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Partida.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/Tablero.cpp" ex="false" tool="1" flavor2="0">
       </item>

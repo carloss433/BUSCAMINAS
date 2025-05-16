@@ -190,6 +190,13 @@ public:
     
     bool haganado();
     
+    Tablero & operator=(const Tablero & orig);
+    
+    bool abrirpos(int i, int j);
+    
+    void marcarpos(int i, int j);
+    
+    void desmarcarpos(int i, int j);
     
     
 };
