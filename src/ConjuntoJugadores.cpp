@@ -87,6 +87,7 @@ ConjuntoJugadores & ConjuntoJugadores::operator+=(const Jugador& newjug) {
         resize(tamreservado + 5);
     }
     vectorJugadores[numjugadores] = newjug;
+    vectorJugadores[numjugadores].setId()=numjugadores+1;
     numjugadores++;
     ordenaporId();
     return *this;
@@ -97,6 +98,7 @@ void ConjuntoJugadores::eliminaJugador(int jugid) {
     if (pos != -1) {
         for (int i = pos; i < numjugadores - 1; ++i) {
             vectorJugadores[i] = vectorJugadores[i + 1];
+            vectorJugadores[i].setId()=i+1;
         }
         numjugadores--;
     }
@@ -156,7 +158,8 @@ string ConjuntoJugadores::mostrarRanking() {
             }
         }
     }
-
+    
+    resultado+= to_string(numjugadores)+"\n";
     for (int i=0; i<numjugadores; ++i) {
         resultado += to_string(ranking.vectorJugadores[i].getId()) + " " + ranking.vectorJugadores[i].getNick() + " ";
         resultado += to_string(ranking.vectorJugadores[i].numPartidasGanadas()) + "/" + to_string(ranking.vectorJugadores[i].numPartidasJugadas());
@@ -192,10 +195,13 @@ std::istream & operator>>(std::istream & flujo, ConjuntoJugadores & m) {
 
 ConjuntoJugadores operator+(const ConjuntoJugadores & left, const ConjuntoJugadores & right) {
     ConjuntoJugadores nuevo(left.numjugadores + right.numjugadores);
-    for (int i=0; i<left.numjugadores; ++i)
+    for (int i=0; i<left.numjugadores; ++i){
         nuevo += left.vectorJugadores[i];
-    for (int i=0; i<right.numjugadores; ++i)
+        nuevo[i].setId()=i+1;
+    }
+    for (int i=0; i<right.numjugadores; ++i){
         nuevo += right.vectorJugadores[i];
+        nuevo[i+left.numjugadores].setId()=i+left.numjugadores+1;
+    }
     return nuevo;
 }
-
