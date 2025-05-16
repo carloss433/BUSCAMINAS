@@ -176,3 +176,21 @@ void Tablero::calculardistancias(){
      return rango;
  }
  
+ bool Tablero::haganado() {
+     bool hagando;
+     int i=0;
+     int j=0;
+     haganado=true;
+     
+     while(haganado==true && i<tab.numfilas()){
+         while(haganado==true && j<tab.numcolumnas()){
+             if(descubierto[i][j]==0 || (tab[i][j]==9 && descubierto[i][j]!=2) || (tab[i][j]!=9 && descubierto[i][j]==2))
+                 haganado=false    
+             i++; 
+         }
+         j++;
+     }
+     
+     return haganado;
+ }
+ 

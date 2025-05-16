@@ -188,6 +188,10 @@ public:
      */
     void loadFichero(string fich);
     
+    bool haganado();
+    
+    
+    
 };
 
 #endif /* TABLERO_H */

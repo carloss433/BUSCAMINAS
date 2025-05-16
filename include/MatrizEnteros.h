@@ -89,8 +89,10 @@ public:
      * @param newc nuevo tamaño de columna
      */
     void resize(int newf, int newc, int value);
+    
+    void liberarMemoria();
+    
 private:
-    const static int MAX = 100;
     int** m;
     int filas;
     int columnas;

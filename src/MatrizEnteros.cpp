@@ -85,6 +85,10 @@ MatrizEnteros::MatrizEnteros(const MatrizEnteros& orig) {
 
 
 MatrizEnteros::~MatrizEnteros() {
+    liberarMemoria();
+}
+
+void MatrizEnteros::liberarMemoria(){
     if (m != nullptr) {
         for (int i = 0; i < filas; i++) {
             delete[] m[i];                  // Libera cada fila
