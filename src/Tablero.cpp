@@ -177,15 +177,15 @@ void Tablero::calculardistancias(){
  }
  
  bool Tablero::haganado() {
-     bool hagando;
+     bool haganado;
      int i=0;
      int j=0;
      haganado=true;
      
      while(haganado==true && i<tab.numfilas()){
          while(haganado==true && j<tab.numcolumnas()){
-             if(descubierto[i][j]==0 || (tab[i][j]==9 && descubierto[i][j]!=2) || (tab[i][j]!=9 && descubierto[i][j]==2))
-                 haganado=false    
+             if(descubierto.getValue(i, j)==0 || (tab.getValue(i, j)==9 && descubierto.getValue(i, j)!=2) || (tab.getValue(i, j)!=9 && descubierto.getValue(i, j)==2))
+                 haganado=false;    
              i++; 
          }
          j++;

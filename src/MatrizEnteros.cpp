@@ -70,17 +70,8 @@ void MatrizEnteros::inicializarMatriz(int def){
 
 
 MatrizEnteros::MatrizEnteros(const MatrizEnteros& orig) {
-    filas = orig.filas;
-    columnas = orig.columnas;
-    m = new int*[filas];  // Reservar memoria
     
-    for (int i = 0; i < filas; i++) {
-        m[i] = new int[columnas];                // Inicializa la matriz copia
-        
-        for (int j = 0; j < columnas; j++) {     // Copia los valores de la matriz original
-            m[i][j] = orig.m[i][j];
-        }
-    }
+    *this=orig;
 }
 
 
@@ -138,3 +129,32 @@ void MatrizEnteros::resize(int newf, int newc, int value){
     columnas = newc;
 }
 
+std::ostream & operator<<(std::ostream & flujo, MatrizEnteros Matriz){
+    flujo << Matriz.numfilas() << " " << Matriz.numcolumnas() << "\n";
+    for (int i=0; i<Matriz.numfilas(); ++i) {
+        for(int j=0; j<Matriz.numcolumnas(); j++){
+        flujo << Matriz.getValue(i, j) << " ";
+        }
+        flujo << "\n";
+    }
+    return flujo;
+}
+
+
+MatrizEnteros & MatrizEnteros::operator=(const MatrizEnteros & orig){
+    if (this != &orig) {
+        liberarMemoria();
+        filas = orig.filas;
+        columnas = orig.columnas;
+        m = new int*[filas];  // Reservar memoria
+    
+        for (int i = 0; i < filas; i++) {
+            m[i] = new int[columnas];                // Inicializa la matriz copia
+        
+            for (int j = 0; j < columnas; j++) {     // Copia los valores de la matriz original
+                m[i][j] = orig.m[i][j];
+            }
+        }
+    }
+    return *this;
+}

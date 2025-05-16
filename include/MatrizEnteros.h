@@ -92,6 +92,9 @@ public:
     
     void liberarMemoria();
     
+    friend std::ostream & operator<<(std::ostream & flujo, MatrizEnteros Matriz);
+    MatrizEnteros & operator=(const MatrizEnteros & orig);
+    
 private:
     int** m;
     int filas;
