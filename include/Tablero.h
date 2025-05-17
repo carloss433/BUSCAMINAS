@@ -80,7 +80,7 @@ private:
     
     int generarNumeroAleatorio(int min, int max);
     
-    bool en_rango(int min, int max, int valor);
+    
 
 public:
     
@@ -151,7 +151,7 @@ public:
      * 
      * 
      */
-    string mostrarTableroaJugador();
+    string mostrarTableroJugador();
   /**
      * @brief Almacena la informacion de la clase en la ruta de fichero indicada. 
      * Primero se pone, en una linea el numero de filas y columnas, luego las 2 matrices
@@ -188,6 +188,8 @@ public:
      */
     void loadFichero(string fich);
     
+    bool en_rango(int min, int max, int valor);
+    
     bool haganado();
     
     Tablero & operator=(const Tablero & orig);
@@ -197,6 +199,10 @@ public:
     void marcarpos(int i, int j);
     
     void desmarcarpos(int i, int j);
+    
+    int getNumfilas();
+    
+    int getNumcolumnas();
     
     
 };

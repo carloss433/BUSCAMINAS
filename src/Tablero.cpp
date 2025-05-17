@@ -61,7 +61,7 @@ string Tablero::mostrarDescubierto(){
  
 }
 //Muestra el tablero tal y como lo debe de ver el jugador en el juego.
-string Tablero::mostrarTableroaJugador(){
+string Tablero::mostrarTableroJugador(){
     string cad="";
     
     for(int i=0; i<tab.numfilas(); i++){
@@ -194,14 +194,14 @@ void Tablero::calculardistancias(){
      return haganado;
  }
  
- Tablero & Tablero::operator=(const Tablero & orig){
-     
-     this->tab=orig.tab;
-     this->descubierto=orig.descubierto;
-     
-     return *this;
-     
- }
+Tablero& Tablero::operator=(const Tablero& orig) {
+    if (this != &orig) { 
+        this->tab = orig.tab;
+        this->descubierto = orig.descubierto;
+    }
+    return *this;
+}
+
  
  bool Tablero::abrirpos(int i, int j){
      
@@ -247,3 +247,11 @@ void Tablero::calculardistancias(){
         descubierto.putValue(i, j)=0;
      }
  }
+  
+  int Tablero::getNumfilas() {
+      return tab.numfilas();
+  }
+  
+  int Tablero::getNumcolumnas() {
+      return tab.numcolumnas();
+  }

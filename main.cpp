@@ -13,6 +13,11 @@
 #include <cstdlib>
 #include <string>
 #include <iostream>
+#include "ConjuntoJugadores.h"
+#include "Jugador.h"
+#include "MatrizEnteros.h"
+#include "Partida.h"
+#include "Tablero.h"
 
 using namespace std;
 
@@ -41,7 +46,7 @@ int main(int argc, char** argv) {
             exit;
         }
     }
-    
+
     
     
     return 0;

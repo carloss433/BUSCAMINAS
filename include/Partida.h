@@ -13,12 +13,33 @@
 #ifndef PARTIDA_H
 #define PARTIDA_H
 
+#include <iostream>
+#include <fstream>
+#include "ConjuntoJugadores.h"
+#include "Tablero.h"
+
+using namespace std;
+
 class Partida {
 public:
-    Partida();
+    Partida(Tablero & newtab, ConjuntoJugadores & newjug);
+    Partida(string fich, int fils, int cols, int numbombas, string nickjugador);
     Partida(const Partida& orig);
     virtual ~Partida();
+    
+    bool turno();
+    void inicializaPartida(string fich, int fils, int cols, int numbombas, string nickjugador);
+    void saveJugadores();
+    void loadJugadores();
+    void realizaPartida();
+    
+    
 private:
+    Tablero tab;
+    ConjuntoJugadores jugs;
+    string nickjugador;
+    string fichero;
+    
 
 };
 
