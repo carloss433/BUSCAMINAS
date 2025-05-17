@@ -70,7 +70,7 @@
         ifstream fich;
         fich.open(fichero);
         if (fich.is_open()){
-            fich >> jugs;
+            fich << jugs;
         }
         
     }
@@ -78,7 +78,7 @@
         ofstream fich;
         fich.open(fichero);
         if (fich.is_open()){
-            fich << jugs;
+            fich >> jugs;
         }
     }
     void Partida::realizaPartida() {
