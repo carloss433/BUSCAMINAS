@@ -34,7 +34,8 @@
     bool Partida::turno() {
         bool turno = true;
         int fil, col, accion;
-        tab.mostrarTableroJugador();
+        accion=0;
+        cout << tab.mostrarTableroJugador();
 
         while (!tab.en_rango(0, tab.getNumfilas(), fil) || !tab.en_rango(0, tab.getNumcolumnas(), col)){
             cout << " Indica la posición de la matriz sobre la que quieres actuar" << "\n" << "fila columna" << "\n";
@@ -67,7 +68,7 @@
         
     }
     void Partida::saveJugadores() {
-        ifstream fich;
+        ofstream fich;
         fich.open(fichero);
         if (fich.is_open()){
             fich << jugs;
@@ -75,7 +76,7 @@
         
     }
     void Partida::loadJugadores() {
-        ofstream fich;
+        ifstream fich;
         fich.open(fichero);
         if (fich.is_open()){
             fich >> jugs;

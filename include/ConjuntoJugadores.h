@@ -70,7 +70,7 @@ public:
      * si lo imprimimos con cout. Antes de imprimir los jugadores se imprime el numero de jugadores,
      * luego \n y luego cada uno de los jugadores. 
      */
-    friend std::ofstream & operator<< (std::ofstream & flujo, const ConjuntoJugadores & m);
+    friend std::ostream & operator<<(std::ostream & flujo, const ConjuntoJugadores & m);
 
      /**
      * @brief Lee del flujo la información los jugadores que forman parte del vector.
@@ -86,7 +86,7 @@ public:
      * 
      * Tanto << como >> pueden utilizarse para leer de ficheros como para imprimir por pantalla
      */
-    friend std::ifstream & operator>> (std::ifstream & flujo,  ConjuntoJugadores & m);
+    friend std::istream & operator>>(std::istream & flujo,  ConjuntoJugadores & m);
     /**
     * @brief Añade un nuevo Jugador al vector de Jugadores.
     * @param newjug Nuevo jugador que se añade al vector.

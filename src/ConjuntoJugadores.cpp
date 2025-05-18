@@ -169,7 +169,7 @@ string ConjuntoJugadores::mostrarRanking() {
     return resultado;
 }
 
-ofstream & operator<<(ofstream & flujo, const ConjuntoJugadores & m) {
+std::ostream & operator<<(std::ostream & flujo, const ConjuntoJugadores & m) {
     flujo << m.numjugadores << "\n";
     for (int i=0; i<m.numjugadores; ++i) {
         flujo << m.vectorJugadores[i] << "\n";
@@ -177,7 +177,7 @@ ofstream & operator<<(ofstream & flujo, const ConjuntoJugadores & m) {
     return flujo;
 }
 
-ifstream & operator>>(ifstream & flujo, ConjuntoJugadores & m) {
+std::istream & operator>>(std::istream & flujo, ConjuntoJugadores & m) {
     int n;
     flujo >> n;
     m.resize(n);
