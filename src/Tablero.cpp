@@ -208,20 +208,19 @@ Tablero& Tablero::operator=(const Tablero& orig) {
      bool hasperdido;
      hasperdido=false;
      
-     if (tab.getValue(i, j)!= 0){
+     if (tab.getValue(i, j)!= 0 && en_rango(0, tab.numfilas(), i) && en_rango(0, tab.numcolumnas(), j)){
          descubierto.putValue(i, j)=1;
      }
      
-     if (tab.getValue(i, j)== 0){
-        
-         descubierto.putValue(i, j)=1;
-        
+     if (tab.getValue(i, j)== 0 && en_rango(0, tab.numfilas(), i) && en_rango(0, tab.numcolumnas(), j)){
+        descubierto.putValue(i, j)=1;
+     
         for(int k=i-1; k<=i+1; k++){
             for (int l=j-1; l<=j+1; l++){
                 
-                if(en_rango(0, tab.numfilas(), k) && en_rango(0, tab.numcolumnas(), l) && k!=i && l!=j){
+                if(en_rango(0, tab.numfilas(), k) && en_rango(0, tab.numcolumnas(), l) && !(k==i && l==j)){
                     if (descubierto.getValue(k, l)!=1){
-                        this->abrirpos(k,l);
+                        abrirpos(k,l);
                     }
                 }
             }
@@ -230,10 +229,12 @@ Tablero& Tablero::operator=(const Tablero& orig) {
  
         
      
-     if (tab.getValue(i,j)==NUMBOMBA){
-         hasperdido=true;
+     if (tab.getValue(i,j)==NUMBOMBA && en_rango(0, tab.numfilas(), i) && en_rango(0, tab.numcolumnas(), j)){
+         return true;
+     }else{
+         return false;
      }
-     return hasperdido;
+    
  }
  
  void Tablero::marcarpos(int i, int j) {

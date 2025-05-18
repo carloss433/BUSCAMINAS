@@ -90,7 +90,9 @@
     void Partida::realizaPartida() {
                 
         while (tab.haganado()==false && turno()==true){
+            cout << tab.mostrarTableroEntero();
             turno();
+            tab.haganado();
         }
 
         if (jugs.buscaJugador(nickjugador)==-1) {
