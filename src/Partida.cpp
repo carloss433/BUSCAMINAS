@@ -83,4 +83,28 @@
     }
     void Partida::realizaPartida() {
         
+        loadJugadores();
+        
+        while (tab.haganado()==false || turno()==false){
+            turno();
+        }
+
+        if (jugs.buscaJugador(nickjugador)==-1) {
+            Jugador newjug(jugs.numJugadores(), nickjugador);
+            jugs+=newjug;
+        }
+                
+        
+        if (tab.haganado()==true){
+            cout << "¡¡¡HAS GANADO!!!";
+            jugs[jugs.buscaJugador(nickjugador)].numPartidasGanadas()++;
+        }else if (turno()==false){
+            cout << "HAS PERDIDO\:\(";
+            jugs[jugs.buscaJugador(nickjugador)].numPartidasPerdidas()++;
+        }
+        
+        saveJugadores();
+        
+        jugs.mostrarRanking()
+        
     }
