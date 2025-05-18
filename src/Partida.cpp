@@ -99,12 +99,12 @@
             cout << "¡¡¡HAS GANADO!!!";
             jugs[jugs.buscaJugador(nickjugador)].numPartidasGanadas()++;
         }else if (turno()==false){
-            cout << "HAS PERDIDO\:\(";
+            cout << "HAS PERDIDO:\(";
             jugs[jugs.buscaJugador(nickjugador)].numPartidasPerdidas()++;
         }
         
         saveJugadores();
         
-        jugs.mostrarRanking()
+        jugs.mostrarRanking();
         
     }
