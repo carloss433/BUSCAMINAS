@@ -72,7 +72,7 @@ string Tablero::mostrarTableroJugador(){
             }
             
             if(descubierto.getValue(i, j)==1){
-                cad+=tab.getValue(i, j);
+                cad+=to_string(tab.getValue(i, j));
             }
             
             if(descubierto.getValue(i, j)==2){
@@ -217,11 +217,11 @@ Tablero& Tablero::operator=(const Tablero& orig) {
          descubierto.putValue(i, j)=1;
         
         for(int k=i-1; k<=i+1; k++){
-            for (int l=j-1; j<=j+1; l++){
+            for (int l=j-1; l<=j+1; l++){
                 
                 if(en_rango(0, tab.numfilas(), k) && en_rango(0, tab.numcolumnas(), l) && k!=i && l!=j){
                     if (descubierto.getValue(k, l)!=1){
-                        abrirpos(k,l);
+                        this->abrirpos(k,l);
                     }
                 }
             }

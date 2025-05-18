@@ -34,7 +34,9 @@
     bool Partida::turno() {
         bool turno = true;
         int fil, col, accion;
-        accion=0;
+        accion = -1;
+        fil = -1;
+        col = -1;
         cout << tab.mostrarTableroJugador();
 
         while (!tab.en_rango(0, tab.getNumfilas(), fil) || !tab.en_rango(0, tab.getNumcolumnas(), col)){
@@ -47,9 +49,10 @@
             cin >> accion;
         }
         
-        if (accion==0)
+        if (accion==0){
+            tab.abrirpos(fil, col);
             turno=tab.abrirpos(fil, col);
-        else if (accion==1)
+        }else if (accion==1)
             tab.marcarpos(fil, col);
         else if (accion=2)
             tab.desmarcarpos(fil, col);
@@ -74,6 +77,7 @@
             fich << jugs;
         }
         
+        fich.close();
     }
     void Partida::loadJugadores() {
         ifstream fich;
@@ -81,12 +85,11 @@
         if (fich.is_open()){
             fich >> jugs;
         }
+        fich.close();
     }
     void Partida::realizaPartida() {
-        
-        loadJugadores();
-        
-        while (tab.haganado()==false || turno()==false){
+                
+        while (tab.haganado()==false && turno()==true){
             turno();
         }
 
