@@ -47,7 +47,9 @@ int main(int argc, char** argv) {
         }
     }
 
+    Partida partida(fichero, filas, columnas, minas, nickJugador);
     
+    partida.realizaPartida();
     
     return 0;
 }
