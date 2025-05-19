@@ -17,9 +17,7 @@
         jugs=newjug;
     }
     Partida::Partida(string fich, int fils, int cols, int numbombas, string nickjugador) {
-        Tablero newtab(fils, cols, numbombas);
-        fichero=fich;
-        tab=newtab;
+        inicializaPartida(fich, fils, cols, numbombas, nickjugador);
     }
     Partida::Partida(const Partida& orig) {
         this->tab=orig.tab;
@@ -32,7 +30,7 @@
     }
     
     bool Partida::turno() {
-        bool turno = true;
+        bool turno = false;
         int fil, col, accion;
         accion = -1;
         fil = -1;
@@ -50,24 +48,23 @@
         }
         
         if (accion==0){
-            tab.abrirpos(fil, col);
             turno=tab.abrirpos(fil, col);
         }else if (accion==1)
             tab.marcarpos(fil, col);
         else if (accion=2)
             tab.desmarcarpos(fil, col);
         
+        tab.haganado();
+        
         return turno;
     }
     
-    void Partida::inicializaPartida(string fich, int fils, int cols, int numbombas, string nickjugador) {
+    void Partida::inicializaPartida(string fich, int fils, int cols, int numbombas, string nick) {
         Tablero newtab(fils, cols, numbombas);        
         fichero=fich;
         loadJugadores();
         tab=newtab;
-        
-        Jugador newjug(1, nickjugador);
-        jugs+=newjug;
+        nickjugador=nick;
         
     }
     void Partida::saveJugadores() {
@@ -89,17 +86,16 @@
     }
     void Partida::realizaPartida() {
                 
-        while (tab.haganado()==false && turno()==true){
-            cout << tab.mostrarTableroEntero();
-            turno();
-            tab.haganado();
-        }
+        while (!tab.haganado() && !turno()){
+            cout << tab.mostrarTableroEntero()  << "\n";
 
+        }
+        
         if (jugs.buscaJugador(nickjugador)==-1) {
-            Jugador newjug(jugs.numJugadores(), nickjugador);
+            Jugador newjug(jugs.numJugadores()+1, nickjugador);
             jugs+=newjug;
         }
-                
+
         
         if (tab.haganado()==true){
             cout << "¡¡¡HAS GANADO!!!";
@@ -111,6 +107,6 @@
         
         saveJugadores();
         
-        jugs.mostrarRanking();
+        cout << jugs.mostrarRanking();
         
     }

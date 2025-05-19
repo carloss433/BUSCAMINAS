@@ -172,7 +172,7 @@ string ConjuntoJugadores::mostrarRanking() {
 std::ostream & operator<<(std::ostream & flujo, const ConjuntoJugadores & m) {
     flujo << m.numjugadores << "\n";
     for (int i=0; i<m.numjugadores; ++i) {
-        flujo << m.vectorJugadores[i] << "\n";
+        flujo << m.vectorJugadores[i].getId() << " " << m.vectorJugadores[i].getNick() << " " << m.vectorJugadores[i].numPartidasGanadas() << " " << m.vectorJugadores[i].numPartidasPerdidas() << "\n";
     }
     return flujo;
 }

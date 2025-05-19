@@ -186,9 +186,9 @@ void Tablero::calculardistancias(){
          while(haganado==true && j<tab.numcolumnas()){
              if(descubierto.getValue(i, j)==0 || (tab.getValue(i, j)==9 && descubierto.getValue(i, j)!=2) || (tab.getValue(i, j)!=9 && descubierto.getValue(i, j)==2))
                  haganado=false;    
-             i++; 
+             j++; 
          }
-         j++;
+         i++;
      }
      
      return haganado;
@@ -208,17 +208,17 @@ Tablero& Tablero::operator=(const Tablero& orig) {
      bool hasperdido;
      hasperdido=false;
      
-     if (tab.getValue(i, j)!= 0 && en_rango(0, tab.numfilas(), i) && en_rango(0, tab.numcolumnas(), j)){
+     if (tab.getValue(i, j)!= 0 ){
          descubierto.putValue(i, j)=1;
      }
      
-     if (tab.getValue(i, j)== 0 && en_rango(0, tab.numfilas(), i) && en_rango(0, tab.numcolumnas(), j)){
+    if (tab.getValue(i, j)== 0 ){
         descubierto.putValue(i, j)=1;
      
         for(int k=i-1; k<=i+1; k++){
             for (int l=j-1; l<=j+1; l++){
                 
-                if(en_rango(0, tab.numfilas(), k) && en_rango(0, tab.numcolumnas(), l) && !(k==i && l==j)){
+                if(en_rango(0, descubierto.numfilas(), k) && en_rango(0, descubierto.numcolumnas(), l) && !(k==i && l==j)){
                     if (descubierto.getValue(k, l)!=1){
                         abrirpos(k,l);
                     }
@@ -229,11 +229,11 @@ Tablero& Tablero::operator=(const Tablero& orig) {
  
         
      
-     if (tab.getValue(i,j)==NUMBOMBA && en_rango(0, tab.numfilas(), i) && en_rango(0, tab.numcolumnas(), j)){
-         return true;
-     }else{
-         return false;
+     if (tab.getValue(i,j)==NUMBOMBA){
+         hasperdido=true;
      }
+         return hasperdido;
+     
     
  }
  

@@ -30,7 +30,7 @@ int & MatrizEnteros:: putValue(int fil, int col){
         return m[fil][col];
     }else{
         cerr << "Error de acceso" << endl;     
-        exit;
+        exit (1);
     }
 }
 
@@ -39,8 +39,8 @@ int MatrizEnteros::getValue(int fil, int col) const{
     if((fil>=0 && fil<filas)&&(col>=0 && col<columnas)){    // Controla que no se accedan a valores fuera de la memoria
         return m[fil][col];
     }else{
-        cerr << "Error de acceso" << endl;     
-        exit;
+        cerr << "Error de acceso en getvalue" << endl;     
+        exit (1);
     }
 }
 

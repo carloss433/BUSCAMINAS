@@ -28,7 +28,7 @@ public:
     virtual ~Partida();
     
     bool turno();
-    void inicializaPartida(string fich, int fils, int cols, int numbombas, string nickjugador);
+    void inicializaPartida(string fich, int fils, int cols, int numbombas, string nick);
     void saveJugadores();
     void loadJugadores();
     void realizaPartida();
