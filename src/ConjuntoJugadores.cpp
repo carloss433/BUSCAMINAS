@@ -190,6 +190,7 @@ std::istream & operator>>(std::istream & flujo, ConjuntoJugadores & m) {
         j.numPartidasPerdidas() = perdidas;
         m.vectorJugadores[i] = j;
     }
+    m.numjugadores=n;
     return flujo;
 }
 

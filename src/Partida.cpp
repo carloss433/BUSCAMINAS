@@ -89,11 +89,11 @@
             
                     cout << tab.mostrarTableroEntero()  << "\n";
         
-        bool sigue;
+        bool haperdido;
         
-        sigue=turno();
+        haperdido=turno();
         
-        while (!tab.haganado() && !sigue){
+        while (!tab.haganado() && !haperdido){
             cout << tab.mostrarTableroEntero()  << "\n";
             turno();
         }
@@ -105,12 +105,13 @@
 
         
         if (tab.haganado()==true){
-            cout << "¡¡¡HAS GANADO!!!";
+            cout << "¡¡¡HAS GANADO!!!" << "\n";
             jugs[jugs.buscaJugador(nickjugador)].numPartidasGanadas()+=1;
-        }else if (sigue==false){
-            cout << "HAS PERDIDO:\(";
+            cout << tab.mostrarTableroJugador() << "\n";
+        }else if (haperdido==true){
+            cout << "HAS PERDIDO:\(" << "\n";
             jugs[jugs.buscaJugador(nickjugador)].numPartidasPerdidas()+=1;
-            tab.mostrarTableroEntero();
+            cout << tab.mostrarTableroEntero() << "\n";
         }
         
         cout << jugs.mostrarRanking();
