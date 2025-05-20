@@ -45,7 +45,8 @@
         
         while (accion !=0 && accion!=1 && accion!=2){
             cout << "Indica la accion a realizar:(0: abrir posición, 1: marcar posición, 2: desmarcar posición)" << "\n";
-            cin >> accion;
+            cin >> accion ;
+            cout << "\n";
         }
         
         if (accion==0){
