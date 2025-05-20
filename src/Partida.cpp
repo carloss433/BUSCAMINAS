@@ -36,17 +36,17 @@
         accion = -1;
         fil = -1;
         col = -1;
-        cout << "\n\n\n"<< "EL BUSCAMINAS" <<"\n\n\n" << tab.mostrarTableroJugador();
+        cout << "\n\n\n\n\n\n\n\n\n\n"<< "EL BUSCAMINAS" <<"\n\n\n" << tab.mostrarTableroJugador() << "\n";
 
         while (!tab.en_rango(0, tab.getNumfilas(), fil) || !tab.en_rango(0, tab.getNumcolumnas(), col)){
-            cout << " Indica la posición de la matriz sobre la que quieres actuar" << "\n" << "fila columna" << "\n";
+            cout << "Indica la posición de la matriz sobre la que quieres actuar" << "\n" << "fila columna" << "\n";
             cin >> fil >> col;
         }
         
         while (accion !=0 && accion!=1 && accion!=2){
             cout << "Indica la accion a realizar:(0: abrir posición, 1: marcar posición, 2: desmarcar posición)" << "\n";
             cin >> accion ;
-
+            cout << "\n\n\n\n\n\n\n\n\n\n\n\n";
         }
         
         if (accion==0){
