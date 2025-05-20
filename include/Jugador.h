@@ -74,13 +74,13 @@ public:
     
     /** @brief Crea un objeto jugador con un id y nick determinado
     */
-    Jugador(int id, string nuevoNick);
+    Jugador(int ide, string nuevoNick);
     
      /** @brief Devuelve un entero con el número de partidas que ha ganado el jugador.
      * La funcion es const para que pueda ser usado en los operadores > < == ...
      * @retval Un entero con el numero de partidas que el jugador ha ganado.
      */   
-    int numPartidasGanadas() const;
+    int getnumPartidasGanadas() const;
     /**
      * @brief Operador de asignación (asigna los valores de orig al objeto).
      * @param orig objeto jugador que se asigna.

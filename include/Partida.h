@@ -39,6 +39,7 @@ private:
     ConjuntoJugadores jugs;
     string nickjugador;
     string fichero;
+
     
 
 };

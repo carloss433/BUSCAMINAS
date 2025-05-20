@@ -30,7 +30,8 @@
     }
     
     bool Partida::turno() {
-        bool turno = false;
+        
+        bool hasperdido;
         int fil, col, accion;
         accion = -1;
         fil = -1;
@@ -48,15 +49,13 @@
         }
         
         if (accion==0){
-            turno=tab.abrirpos(fil, col);
+            hasperdido=tab.abrirpos(fil, col);
         }else if (accion==1)
             tab.marcarpos(fil, col);
         else if (accion=2)
             tab.desmarcarpos(fil, col);
         
-        tab.haganado();
-        
-        return turno;
+        return hasperdido;
     }
     
     void Partida::inicializaPartida(string fich, int fils, int cols, int numbombas, string nick) {
@@ -65,6 +64,8 @@
         loadJugadores();
         tab=newtab;
         nickjugador=nick;
+        
+        cout << jugs.mostrarRanking();
         
     }
     void Partida::saveJugadores() {
@@ -85,10 +86,16 @@
         fich.close();
     }
     void Partida::realizaPartida() {
-                
-        while (!tab.haganado() && !turno()){
+            
+                    cout << tab.mostrarTableroEntero()  << "\n";
+        
+        bool sigue;
+        
+        sigue=turno();
+        
+        while (!tab.haganado() && !sigue){
             cout << tab.mostrarTableroEntero()  << "\n";
-
+            turno();
         }
         
         if (jugs.buscaJugador(nickjugador)==-1) {
@@ -99,14 +106,15 @@
         
         if (tab.haganado()==true){
             cout << "¡¡¡HAS GANADO!!!";
-            jugs[jugs.buscaJugador(nickjugador)].numPartidasGanadas()++;
-        }else if (turno()==false){
+            jugs[jugs.buscaJugador(nickjugador)].numPartidasGanadas()+=1;
+        }else if (sigue==false){
             cout << "HAS PERDIDO:\(";
-            jugs[jugs.buscaJugador(nickjugador)].numPartidasPerdidas()++;
+            jugs[jugs.buscaJugador(nickjugador)].numPartidasPerdidas()+=1;
+            tab.mostrarTableroEntero();
         }
         
-        saveJugadores();
-        
         cout << jugs.mostrarRanking();
+        
+        saveJugadores();
         
     }

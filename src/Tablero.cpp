@@ -206,9 +206,9 @@ Tablero& Tablero::operator=(const Tablero& orig) {
  bool Tablero::abrirpos(int i, int j){
      
      bool hasperdido;
-     hasperdido=false;
+    
      
-     if (tab.getValue(i, j)!= 0 ){
+     if (tab.getValue(i, j)!= 0){
          descubierto.putValue(i, j)=1;
      }
      

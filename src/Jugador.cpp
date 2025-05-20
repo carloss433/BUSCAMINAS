@@ -29,9 +29,9 @@ Jugador::~Jugador() {
 }
 
 // Constructor con id y nick
-Jugador::Jugador(int id, string nuevoNick) {
-    this->id = id;
-    this->nick = nuevoNick;
+Jugador::Jugador(int ide, string nuevoNick) {
+    id = ide;
+    nick = nuevoNick;
     numpartidasganadas = 0;
     numpartidasperdidas = 0;
 }
@@ -60,7 +60,7 @@ int& Jugador::setId() {
     return id;
 }
 
-int Jugador::numPartidasGanadas() const {
+int Jugador::getnumPartidasGanadas() const {
     return numpartidasganadas;
 }
 
@@ -86,7 +86,7 @@ bool operator==(const Jugador& izq, const Jugador& dch) {
     int totalDch = dch.numPartidasJugadas();
     if (totalIzq == 0 && totalDch == 0) return true;
     if (totalIzq == 0 || totalDch == 0) return false;
-    return (double)izq.numPartidasGanadas() / totalIzq == (double)dch.numPartidasGanadas() / totalDch;
+    return (double)izq.getnumPartidasGanadas() / totalIzq == (double)dch.getnumPartidasGanadas() / totalDch;
 }
 
 
@@ -100,7 +100,7 @@ bool operator<(const Jugador& izq, const Jugador& dch) {
     if (totalIzq == 0 && totalDch == 0) return false;
     if (totalIzq == 0) return true;
     if (totalDch == 0) return false;
-    return (double)izq.numPartidasGanadas() / totalIzq < (double)dch.numPartidasGanadas() / totalDch;
+    return (double)izq.getnumPartidasGanadas() / totalIzq < (double)dch.getnumPartidasGanadas() / totalDch;
 }
 
 bool operator>(const Jugador& izq, const Jugador& dch) {
