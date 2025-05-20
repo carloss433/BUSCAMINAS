@@ -9,9 +9,11 @@
         <group>
             <file>file:/home/carlos/MP/P5/Practica5/include/ConjuntoJugadores.h</file>
             <file>file:/home/carlos/MP/P5/Practica5/include/Partida.h</file>
+            <file>file:/home/carlos/MP/P5/Practica5/main.cpp</file>
             <file>file:/home/carlos/MP/P5/Practica5/src/Tablero.cpp</file>
             <file>file:/home/carlos/MP/P5/Practica5/src/MatrizEnteros.cpp</file>
             <file>file:/home/carlos/MP/P5/Practica5/src/ConjuntoJugadores.cpp</file>
+            <file>file:/home/carlos/MP/P5/Practica5/src/Jugador.cpp</file>
             <file>file:/home/carlos/MP/P5/Practica5/src/Partida.cpp</file>
             <file>file:/home/carlos/MP/P5/Practica5/include/Jugador.h</file>
         </group>

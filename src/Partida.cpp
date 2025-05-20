@@ -87,12 +87,11 @@
     void Partida::realizaPartida() {
         
         bool haperdido;
-        
-        haperdido=turno();
+        haperdido=false;
         
         while (!tab.haganado() && !haperdido){
 
-            turno();
+           haperdido=turno();
         }
         
         if (jugs.buscaJugador(nickjugador)==-1) {
