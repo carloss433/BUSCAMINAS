@@ -183,6 +183,7 @@ void Tablero::calculardistancias(){
      haganado=true;
      
      while(haganado==true && i<tab.numfilas()){
+         j=0;
          while(haganado==true && j<tab.numcolumnas()){
              if(descubierto.getValue(i, j)==0 || (tab.getValue(i, j)==9 && descubierto.getValue(i, j)!=2) || (tab.getValue(i, j)!=9 && descubierto.getValue(i, j)==2))
                  haganado=false;    
