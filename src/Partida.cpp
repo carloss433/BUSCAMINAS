@@ -36,7 +36,7 @@
         accion = -1;
         fil = -1;
         col = -1;
-        cout << tab.mostrarTableroJugador();
+        cout << "\n\n\n"<< "EL BUSCAMINAS" <<"\n\n\n" << tab.mostrarTableroJugador();
 
         while (!tab.en_rango(0, tab.getNumfilas(), fil) || !tab.en_rango(0, tab.getNumcolumnas(), col)){
             cout << " Indica la posición de la matriz sobre la que quieres actuar" << "\n" << "fila columna" << "\n";
@@ -46,7 +46,7 @@
         while (accion !=0 && accion!=1 && accion!=2){
             cout << "Indica la accion a realizar:(0: abrir posición, 1: marcar posición, 2: desmarcar posición)" << "\n";
             cin >> accion ;
-            cout << "\n";
+
         }
         
         if (accion==0){
@@ -65,10 +65,8 @@
         loadJugadores();
         tab=newtab;
         nickjugador=nick;
-        
-        cout << jugs.mostrarRanking();
-        
     }
+    
     void Partida::saveJugadores() {
         ofstream fich;
         fich.open(fichero);
@@ -87,15 +85,13 @@
         fich.close();
     }
     void Partida::realizaPartida() {
-            
-                    cout << tab.mostrarTableroEntero()  << "\n";
         
         bool haperdido;
         
         haperdido=turno();
         
         while (!tab.haganado() && !haperdido){
-            cout << tab.mostrarTableroEntero()  << "\n";
+
             turno();
         }
         
