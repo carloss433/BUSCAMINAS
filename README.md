@@ -37,7 +37,7 @@ Este repositorio contiene una versión del popular juego Buscaminas (Minesweeper
 3. Ejecuta el juego:
 
    ```bash
-   ./buscaminas
+   ./buscaminas -f <filas> -c <columnas> -m <minas> -fich <fichero> (donde se almacenan los jugadores) -nick <nickjugador>
    ```
 
 ## Uso
