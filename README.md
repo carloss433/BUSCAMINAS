@@ -13,6 +13,7 @@ Este repositorio contiene una versión del popular juego Buscaminas (Minesweeper
 - Detección de victoria y derrota.
 - Código modular y documentado.
 - Compatible con sistemas Unix/Linux.
+- Gestión de jugadores mediante fichero.
 
 ## Tecnologías utilizadas
 
@@ -37,7 +38,18 @@ Este repositorio contiene una versión del popular juego Buscaminas (Minesweeper
 3. Ejecuta el juego:
 
    ```bash
-   ./buscaminas -f <filas> -c <columnas> -m <minas> -fich <fichero> (donde se almacenan los jugadores) -nick <nickjugador>
+   ./buscaminas -f <filas> -c <columnas> -m <minas> -fich <fichero_jugadores> -nick <nick_jugador>
+   ```
+
+   - `<filas>`: número de filas del tablero.
+   - `<columnas>`: número de columnas del tablero.
+   - `<minas>`: número de minas.
+   - `<fichero_jugadores>`: archivo donde se almacenan los datos de los jugadores.
+   - `<nick_jugador>`: nombre de usuario del jugador.
+
+   **Ejemplo:**
+   ```bash
+   ./buscaminas -f 10 -c 10 -m 15 -fich jugadores.txt -nick carlos433
    ```
 
 ## Uso
