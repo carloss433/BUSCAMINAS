@@ -64,9 +64,20 @@ string Tablero::mostrarDescubierto(){
 string Tablero::mostrarTableroJugador(){
     string cad="";
     
-    for(int i=0; i<tab.numfilas(); i++){
-        for(int j=0; j<tab.numcolumnas(); j++){
+    for(int i=-1; i<tab.numfilas(); i++){
         
+        if(i<0)
+            cad+= "   ";
+        else
+        cad+= to_string(i) + "\| ";
+        
+        for(int j=0; j<tab.numcolumnas(); j++){
+            
+            if(i==-1){
+                cad+= "\033[4m"+to_string(j)+"\033[0m";
+            }else{
+            
+            
             if(descubierto.getValue(i, j)==0){
                 cad+='?';
             }
@@ -79,7 +90,9 @@ string Tablero::mostrarTableroJugador(){
                 cad+='B';
                 
             }
+            }
             cad+=" ";
+            
         }
         cad+="\n";
     }
