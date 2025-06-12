@@ -1,10 +1,12 @@
+---
+
 # BUSCAMINAS
 
 El Juego del Buscaminas — Implementación clásica en C++.
 
 ## Descripción
 
-Este repositorio contiene una versión del popular juego Buscaminas (Minesweeper) desarrollada principalmente en C++. El objetivo del juego es descubrir todas las casillas vacías de un tablero sin detonar ninguna mina oculta.
+Este repositorio contiene una versión del popular juego Buscaminas (Minesweeper) desarrollada principalmente en C++. El objetivo del juego es descubrir todas las casillas vacías de un tablero sin detonar ninguna mina.
 
 ## Características
 
@@ -68,4 +70,7 @@ Sigue las instrucciones que aparecen en la terminal para jugar. Elige las casill
 
 ## Licencia
 
-Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto se distribuye bajo la licencia Eclipse Public License v2.0. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+---
+
