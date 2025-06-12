@@ -1,5 +1,3 @@
----
-
 # BUSCAMINAS
 
 El Juego del Buscaminas — Implementación clásica en C++.
@@ -71,6 +69,3 @@ Sigue las instrucciones que aparecen en la terminal para jugar. Elige las casill
 ## Licencia
 
 Este proyecto se distribuye bajo la licencia Eclipse Public License v2.0. Consulta el archivo [LICENSE](LICENSE) para más detalles.
-
----
-
