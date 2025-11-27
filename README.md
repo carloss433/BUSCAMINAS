@@ -4,7 +4,7 @@ The Minesweeper Game — Classic implementation in C++.
 
 ## Description
 
-This repository contains a version of the popular Minesweeper game developed mainly in C++. The objective of the game is to uncover all empty squares on a board without [...]
+This repository contains a version of the popular Minesweeper game developed mainly in C++. The objective of the game is to uncover all empty squares on a board without revealing a mine.
 
 ## Features
 
@@ -71,6 +71,7 @@ Contributions are welcome! If you find a bug or want to propose an improvement, 
 This project is distributed under the Eclipse Public License v2.0. See the [LICENSE](LICENSE) file for more details.
 
 ---
+
 
 # BUSCAMINAS
 
