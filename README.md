@@ -1,5 +1,77 @@
 # BUSCAMINAS
 
+The Minesweeper Game — Classic implementation in C++.
+
+## Description
+
+This repository contains a version of the popular Minesweeper game developed mainly in C++. The objective of the game is to uncover all empty squares on a board without [...]
+
+## Features
+
+- Text-based interface to play in the terminal.
+- Mine generation logic and cell handling.
+- Win and loss detection.
+- Modular and documented code.
+- Compatible with Unix/Linux systems.
+- Player management via a file.
+
+## Technologies used
+
+- **Main language:** C++
+- Other languages: Makefile, Objective-C, C, Shell, BitBake
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/carloss433/BUSCAMINAS.git
+   cd BUSCAMINAS
+   ```
+
+2. Build the project (requires `make` and a C++ compiler):
+
+   ```bash
+   make
+   ```
+
+3. Run the game:
+
+   ```bash
+   ./buscaminas -f <rows> -c <columns> -m <mines> -fich <players_file> -nick <player_nick>
+   ```
+
+   - `<rows>`: number of rows of the board.
+   - `<columns>`: number of columns of the board.
+   - `<mines>`: number of mines.
+   - `<players_file>`: file where player data is stored.
+   - `<player_nick>`: player nickname.
+
+   Example:
+   ```bash
+   ./buscaminas -f 10 -c 10 -m 15 -fich jugadores.txt -nick carlos433
+   ```
+
+## Usage
+
+Follow the instructions shown in the terminal to play. Choose the cells you want to reveal and try to avoid the mines.
+
+## Project structure
+
+- `src/` — Main source code in C++.
+- `Makefile` — Script to build the project.
+- Other files related to configuration and support.
+
+## Contributions
+
+Contributions are welcome! If you find a bug or want to propose an improvement, open an issue or a pull request.
+
+## License
+
+This project is distributed under the Eclipse Public License v2.0. See the [LICENSE](LICENSE) file for more details.
+
+# BUSCAMINAS
+
 El Juego del Buscaminas — Implementación clásica en C++.
 
 ## Descripción
