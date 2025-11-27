@@ -1,4 +1,4 @@
-# BUSCAMINAS
+# Minesweeper
 
 The Minesweeper Game — Classic implementation in C++.
 
