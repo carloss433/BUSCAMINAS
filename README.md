@@ -70,6 +70,8 @@ Contributions are welcome! If you find a bug or want to propose an improvement, 
 
 This project is distributed under the Eclipse Public License v2.0. See the [LICENSE](LICENSE) file for more details.
 
+---
+
 # BUSCAMINAS
 
 El Juego del Buscaminas — Implementación clásica en C++.
